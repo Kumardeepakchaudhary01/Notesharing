@@ -1,0 +1,40 @@
+:root {
+    /* --- Colors: Neon Nexus Theme --- */
+    --bg-dark: #080a12;
+    --bg-gradient: radial-gradient(circle at top right, #1e1b4b, #080a12);
+    
+    --primary: #06b6d4; /* Neon Cyan */
+    --secondary: #8b5cf6; /* Electric Purple */
+    --accent: #f472b6; /* Soft Pink for highlights */
+    
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    
+    /* --- Glassmorphism --- */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --glass-blur: 12px;
+
+    /* --- Typography --- */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* --- Spacing & Radius --- */
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
+    
+    --container-width: 1200px;
+    --header-height: 80px;
+}
+
+[data-theme="light"] {
+    --bg-dark: #f0f4f8;
+    --bg-gradient: radial-gradient(circle at top right, #e0e7ff, #f0f4f8);
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}

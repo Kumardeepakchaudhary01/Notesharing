@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenNotes | Student Notes Platform</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Header -->
+    <header id="main-header" class="glass-header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>NotesHub</span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="mobile-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-content-wrapper">
+                <div class="hero-text">
+                    <span class="badge-glass">🚀 The Future of Learning</span>
+                    <h1 class="hero-title">Access <span class="text-gradient">Uni Notes</span> Instantly.</h1>
+                    <p class="hero-subtitle">Find high-quality PDF notes for every semester, department, and subject in
+                        seconds.</p>
+
+                    <div class="hero-search-wrapper">
+                        <div class="glass-search-bar">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" placeholder="Search for subjects, topics..." id="hero-search">
+                            <button class="search-btn">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="glass-card visual-card">
+                        <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <h3>500+ Notes</h3>
+                        <p>Curated content</p>
+                    </div>
+                    <div class="glass-card visual-card floating-card">
+                        <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Top Rated</h3>
+                        <p>By Students</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Departments / Categories -->
+        <section id="departments" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Browse by <span class="text-gradient">Department</span></h2>
+                    <p>Select your field of study to get started.</p>
+                </div>
+
+                <div class="grid-layout" id="dept-grid">
+                    <!-- JS will populate this -->
+                    <div class="glass-card dept-card skeleton"></div>
+                    <div class="glass-card dept-card skeleton"></div>
+                    <div class="glass-card dept-card skeleton"></div>
+                    <div class="glass-card dept-card skeleton"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Notes Explorer (Dynamic) -->
+        <section id="notes-explorer" class="section-padding" style="display: none;">
+            <div class="container">
+                <div class="section-header">
+                    <button id="back-to-dept" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to
+                        Departments</button>
+                    <h2 id="selected-dept-title">Computer Science <span class="text-gradient">Subjects</span></h2>
+                    <p>Select a subject to view available units and notes.</p>
+                </div>
+
+                <div class="glass-filters">
+                    <div class="filter-group">
+                        <label>Semester:</label>
+                        <select id="semester-select" class="glass-select">
+                            <option value="all">All Semesters</option>
+                            <!-- JS populated -->
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <input type="text" placeholder="Filter subjects..." id="subject-search" class="glass-input">
+                    </div>
+                </div>
+
+                <div class="grid-layout" id="subjects-grid">
+                    <!-- JS will populate -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Viewer Modal -->
+        <div id="pdf-modal" class="modal-overlay">
+            <div class="glass-modal">
+                <div class="modal-header">
+                    <h3 id="modal-title">Unit 1: Introduction</h3>
+                    <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="pdf-placeholder">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <p>PDF Viewer would load here.</p>
+                        <button class="download-btn">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ZenNotes</h3>
+                    <p>Empowering students with accessible knowledge.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#departments">Departments</a></li>
+                        <li><a href="about.html">About Developer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 ZenNotes. Designed & Developed by Vaibhav Arayan.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
